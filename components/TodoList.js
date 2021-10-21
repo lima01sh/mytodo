@@ -4,6 +4,9 @@ import Entypo from "react-native-vector-icons/Entypo";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import styled from "styled-components";
 
+// let today = item.date;
+// let date = today.getDate() + "/"+ parseInt(today.getMonth()+1) +"/"+parseInt(today.getFullYear()+543);
+
 export default function TodoList({ item, deleteItem }) {
   return (
     <ComponentContainer>

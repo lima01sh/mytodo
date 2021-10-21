@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import AntDesign from "react-native-vector-icons/AntDesign";
 
+// let today = new Date().toISOString().slice(0, 10);
+
 let today = new Date();
 let date=today.getDate() + "-"+ parseInt(today.getMonth()+1) +"-"+parseInt(today.getFullYear()+543);
 

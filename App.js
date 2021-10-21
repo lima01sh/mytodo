@@ -11,13 +11,15 @@ export default function App() {
   const [data, setData] = useState([]);
 
   const submitHandler = (value, date) => {
-
+    const getdate=date.getDate() + "-"+ parseInt(date.getMonth()+1) +"-"+parseInt(date.getFullYear()+543);
+    
     firebase.firestore()
       .collection('todotask')
       .add({
         value: value,
-        date: date.toISOString().slice(5, 18),
-        key: Math.random().toString(),
+        date: getdate,
+        // date: date.toISOString().slice(0, 10),
+        key: Math.random().toString()
       }).then(() => {
         console.log('Compelete!!')
       });

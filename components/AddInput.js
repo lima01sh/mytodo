@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import DatePicker from 'react-native-date-picker'
+import DatePicker from 'react-native-date-picker';
+// import { format } from 'date-fns/esm';
+// import { th } from 'date-fns/esm/locale';
+// registerLocale('TH', th)
 
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { Alert } from "react-native";
@@ -10,6 +13,7 @@ export default function AddInput({ submitHandler }) {
   const [date, setDate] = useState(new Date())
   const [open, setOpen] = useState(false)
 
+  
   const onChangeText = (text) => {
     setValue(text);
   };
@@ -28,6 +32,7 @@ export default function AddInput({ submitHandler }) {
       </CalendarButton>
       <DatePicker
         modal
+        
         mode="date"
         open={open}
         date={date}
@@ -42,10 +47,10 @@ export default function AddInput({ submitHandler }) {
       <SubmitButton
         
         onPress={() => {
-          if (value.trim().length > 0) {
-            setValue(submitHandler(value, date));
-          } else {
+          if (value.trim().length == 0) {
             Alert.alert('Warning!!', 'Please fill task in Calenda.');
+          } else {
+            setValue(submitHandler(value, date));
           }
         }}
       >
