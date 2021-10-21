@@ -15,7 +15,7 @@ export default function TodoList({ item, deleteItem }) {
           <TextItem>{item.value}</TextItem>
           <TextDate>{item.date}</TextDate>
         </View>
-        <IconContainer onPress={() => deleteItem(item.key)}>
+        <IconContainer onPress={() => deleteItem(item._id)}>
           <MaterialIcons name="delete" size={24} color="midnightblue" />
         </IconContainer>
       </ListContainer>

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import AntDesign from "react-native-vector-icons/AntDesign";
 
-let today = new Date().toISOString().slice(0, 10);
+let today = new Date();
+let date=today.getDate() + "-"+ parseInt(today.getMonth()+1) +"-"+parseInt(today.getFullYear()+543);
 
 export default function Header({ searchItem }) {
     const [value, setValue] = useState("");
@@ -14,16 +15,16 @@ export default function Header({ searchItem }) {
         <>
             <ComponentContainer>
                 <HeaderText>To-Do.</HeaderText>
-                <HeaderList>{today}</HeaderList>
+                <HeaderList>{date}</HeaderList>
             </ComponentContainer>
             <SearchContainer>
                 <InputContainer>
                     <Input placeholder="Search..." onChangeText={onChangeText} />
                 </InputContainer>
-                <SubmitButton 
+                <SubmitButton
                     onPress={() => {
                         setValue(searchItem(value));
-                    }} 
+                    }}
                 >
                     <AntDesign name="search1" size={24} color="midnightblue" />
                 </SubmitButton>
