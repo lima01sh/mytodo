@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function Empty() {
     return (
         <ComponentContainer>
-            <EmptyImage source={require("../assets/images/emptytodo-removebg-preview.png")} />
+            <EmptyImage source={require("../assets/images/ca1.png")} />
             <EmptyText>Add Task</EmptyText>
         </ComponentContainer>
     );
@@ -13,12 +13,12 @@ export default function Empty() {
 const ComponentContainer = styled.View`
     align-items: center;
     justify-content: center;
-    height: 650px;
+    height: 500px;
 `;
 
 const EmptyImage = styled.Image`
     width: 350px;
-    height: 200px;
+    height: 300px;
 `;
 
 const EmptyText = styled.Text`

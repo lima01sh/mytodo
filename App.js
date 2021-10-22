@@ -90,7 +90,7 @@ export default function App() {
   return (
     <ComponentContainer>
       <View>
-        <StatusBar barStyle="light-content" backgroundColor="midnightblue" />
+        <StatusBar barStyle="light-content" backgroundColor="teal" />
       </View>
       <View>
         <FlatList
@@ -113,7 +113,7 @@ export default function App() {
 }
 
 const ComponentContainer = styled.View`
-  background-color: midnightblue;
+  background-color: teal;
   height: 100%;
   flex-direction: column;
   align-items: center;
