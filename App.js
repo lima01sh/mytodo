@@ -7,12 +7,13 @@ import Empty from "./components/Empty";
 import Header from "./components/Header";
 import firestore, { firebase } from '@react-native-firebase/firestore';
 
+
 export default function App() {
   const [data, setData] = useState([]);
 
   const submitHandler = (value, date) => {
-    const getdate=date.getDate() + "-"+ parseInt(date.getMonth()+1) +"-"+parseInt(date.getFullYear()+543);
-    
+    const getdate = date.getDate() + "-" + parseInt(date.getMonth() + 1) + "-" + parseInt(date.getFullYear() + 543);
+
     firebase.firestore()
       .collection('todotask')
       .add({
@@ -49,13 +50,11 @@ export default function App() {
           };
         });
         setData(data);
-
       });
     return () => showtask();
+
   }, []
   );
-
-
 
   const deleteItem = (key) => {
     Alert.alert(
@@ -81,10 +80,21 @@ export default function App() {
     // });
   };
 
-
-
   const searchItem = (keyword) => {
+      // firebase.firestore()
+      // .collection("todotask")
+      // .where(admin.FieldPath.doc().value, 'in', keyword)
+      // .get()
+      // .then(function (querySnapshot) {
+      //   querySnapshot.forEach(function (doc) {
+      //     console.log(doc.id, " => ", doc.data());
+      //   });
+      // })
+      // .catch(function (error) {
+      //   console.log("Error getting documents: ", error);
+      // });
 
+    //   firebase.firestore().collection('todotask').doc(key).delete();
   }
 
   return (

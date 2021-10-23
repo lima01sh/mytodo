@@ -24,15 +24,14 @@ export default function AddInput({ submitHandler }) {
       <InputContainer>
         <Input
           placeholder="Add Task..."
-          onChangeText={onChangeText} />
-
+          onChangeText={onChangeText} 
+          ref={input => { this.textInput = input }} />
       </InputContainer>
       <CalendarButton onPress={() => setOpen(true)} >
         <AntDesign name="calendar" size={24} color="midnightblue" />
       </CalendarButton>
       <DatePicker
         modal
-        
         mode="date"
         open={open}
         date={date}
@@ -51,6 +50,8 @@ export default function AddInput({ submitHandler }) {
             Alert.alert('Warning!!', 'Please fill task in Calenda.');
           } else {
             setValue(submitHandler(value, date));
+            setValue("");
+            this.textInput.clear()
           }
         }}
       >
